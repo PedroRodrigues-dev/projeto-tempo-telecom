@@ -1,0 +1,39 @@
+<h1 class="text-center mt-3 mb-3">Pedidos</h1>
+<div class="card mx-auto">
+  <div class="card-body mx-auto">
+    <div class="row">
+      <div class="col text-center">
+        <a routerLink="Cadastrar" class="btn btn-primary mb-3">Novo</a>
+      </div>
+      <div class="col text-center">
+        <a routerLink="" class="btn btn-secondary mb-3">Voltar</a>
+      </div>
+    </div>
+    <div class="row mx-auto">
+      <div class="col-sm d-flex" *ngFor="let pedido of resultados">
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">
+              #{{ pedido.id }}
+            </h5>
+            <p class="card-text">Cliente: {{ pedido.cliente.nome }} <br />
+              Valor: R${{pedido.produto1.valor + pedido.produto2.valor + pedido.produto3.valor + pedido.produto4.valor}}
+              <br />
+              Data: {{pedido.createdAt}}
+            </p>
+            <div class="card-text">
+              <div class="row">
+                <div class="col text-center">
+                  <a class="btn btn-warning" [routerLink]="['alterar/', pedido.id]">Alterar</a>
+                </div>
+                <div class="col text-center">
+                  <a class="btn btn-danger" (click)="deleteById(pedido)">Deletar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
