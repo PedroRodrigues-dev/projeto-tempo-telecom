@@ -16,4 +16,4 @@ caso esteja em ambiente windows apenas substitua o comando por esse "mvnw spring
 Para rodar o front-end é necessário o angular e o node que podem ser instalados baseados na wiki do site oficial:
 https://nodejs.org/en/
 https://angular.io/guide/setup-local
-para inicia-lo basta dentro da pasta "front" executar o comando "ng s"
+para inicia-lo basta dentro da pasta "front" executar o comando "npm install " e apos ele "ng s"
