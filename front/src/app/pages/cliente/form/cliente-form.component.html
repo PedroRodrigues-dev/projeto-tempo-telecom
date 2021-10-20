@@ -1,0 +1,46 @@
+<h1 class="text-center mt-3 mb-3">Cadastrar Cliente</h1>
+<div class="card mx-auto" style="width: 20rem;">
+  <form [formGroup]="clientesForm" class="mx-3 my-3">
+    <!-- Nome Input -->
+    <div class="form-group">
+      <app-field-validation-container>
+        <label label class="fontSize" for="nome">Nome </label>
+        <input input type="text" class="form-control" id="nome" placeholder="Digite seu nome" formControlName="nome" />
+      </app-field-validation-container>
+    </div>
+
+    <!-- Telefone Input -->
+    <div class="form-group">
+      <app-field-validation-container>
+        <label label class="fontSize" for="telefone">Telefone </label>
+        <input input type="text" class="form-control" id="telefone" placeholder="Ex: 5562912345678"
+          formControlName="telefone" />
+      </app-field-validation-container>
+    </div>
+    <!-- Data Nascimento Input -->
+    <div class="form-group">
+      <app-field-validation-container>
+        <label label class="fontSize" for="data_nascimento">Data de Nascimento </label>
+        <input input type="text" class="form-control" id="data_nascimento" placeholder="Ex: 30/09/2002"
+          formControlName="data_nascimento" />
+      </app-field-validation-container>
+    </div>
+    <div class="mt-3">
+      <div class="row">
+        <div class="col text-center">
+          <!-- Salvar Button -->
+          <a (click)="onSave(clientesForm.value)" class="btn btn-primary botoes text-white" type="submit"
+            role="button"><i class="fas fa-plus-circle" *ngIf="this.addBtnLabel == 'Salvar'"></i>
+            <i class="fas fa-save" *ngIf="this.addBtnLabel == 'Alterar'"></i>
+            {{ this.addBtnLabel }}
+          </a>
+        </div>
+        <div class="col text-center">
+          <!-- Cancelar Button -->
+          <a (click)="onCancel()" class="btn btn-secondary botoes text-white" role="button"><i
+              class="fas fa-times-circle"></i> Calcelar</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
